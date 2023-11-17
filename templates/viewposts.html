@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<style>
+    .card__container {
+        transition: .3s all ease-in-out;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .card__container:active {
+        box-shadow: none;
+    }
+</style>
+
+<div class="d-flex flex-column align-items-start gap-2 p-2 rounded shadow-0">
+    {% for items in data %}
+        <a href="/view/{{items.id}}" style="max-height:150px; width:100%; overflow:hidden" class="d-flex flex-row p-3 rounded shadow-sm mb-3 border card__container text-secondary">
+            {{items.code}}
+        </a>
+    {% endfor %}
+</div>
+
+{% endblock %}
